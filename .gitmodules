@@ -1,0 +1,6 @@
+[submodule "cc65"]
+	path = cc65
+	url = https://github.com/cc65/cc65.git
+[submodule "nestools"]
+	path = nestools
+	url = https://github.com/clbr/nes.git

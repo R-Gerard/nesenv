@@ -2,6 +2,8 @@
 Docker build environment for NES/cc65 projects:
 - cc65
 - nestools
+- wine64
+- FamiTracker
 
 # Cloning
 This project uses submodules. Be sure to clone recursively:

@@ -1,18 +1,20 @@
-FROM alpine:3.9.2
+FROM ubuntu:cosmic-20190311
 
 LABEL author.name="Rusty Gerard"
 LABEL author.email="rusty.gerard@gmail.com"
-LABEL description="Build environment for NES/cc65 projects: cc65, nestools, wine64, famitracker"
+LABEL description="Build environment for NES/cc65 projects: cc65, nestools, wine32, famitracker"
 
 ENV prefix=/usr/local
 ENV DISPLAY=:99
 
-RUN apk update && apk upgrade && apk add \
-  build-base \
+RUN dpkg --add-architecture i386
+RUN apt-get update && apt-get upgrade -y && apt-get install -y \
+  build-essential \
   git \
   libpng-dev \
   unzip \
-  wine \
+  wget \
+  wine32 \
   xvfb
 
 WORKDIR /home/root/
@@ -38,4 +40,4 @@ RUN rm -rf nestools/
 
 WORKDIR /home/root/work/
 
-ENTRYPOINT sh
+ENTRYPOINT bash

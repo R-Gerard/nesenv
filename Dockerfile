@@ -4,7 +4,7 @@ LABEL author.name="Rusty Gerard"
 LABEL author.email="rusty.gerard@gmail.com"
 LABEL description="Build environment for NES/cc65 projects: cc65, nestools, wine32, famitracker"
 
-ENV prefix=/usr/local
+ENV PREFIX=/usr/local
 ENV DISPLAY=:99
 
 RUN dpkg --add-architecture i386
